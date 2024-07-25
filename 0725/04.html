@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select 태그</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 요소를 찾고,
+        const select = document.querySelector('select');
+        const p = document.querySelector('p');
+
+        // change 이벤트 핸들러 등록
+        select.addEventListener('change', (event) => {
+          const options = event.currentTarget.options; // option 요소를 접근하고
+          const index = event.currentTarget.options.selectedIndex; // 활성화된 인덱스 값에 접근하고
+          const list = [];
+
+          for (const option of options) {
+            if (option.selected) {
+              list.push(option.textContent);
+            }
+          }
+          p.textContent = `선택: ${list.join(',')}`; // 활성화된 옵션의 요소의 텍스트를 p 태그에 ,으로 간격을 주며 할당.
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <select multiple>
+      <option>😃</option>
+      <option>🥲</option>
+      <option>😝</option>
+      <option>🤩</option>
+    </select>
+    <p></p>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('input');
+        const button = document.querySelector('button#inch');
+
+        const insertText = (tag, value) => {
+          const $tag = document.querySelector(tag);
+
+          $tag.textContent = value;
+        };
+
+        button.addEventListener('click', () => {
+          const celsius = Number(input.value);
+
+          if (Number.isNaN(celsius)) {
+            insertText('p', '숫자 입력!!!');
+
+            return;
+          }
+
+          const fahrenheit = (celsius * 9) / 5 + 32;
+          insertText('p', `${fahrenheit} cm`);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" /> inch<br />
+    <button>계산</button>
+    <p></p>
+  </body>
+</html>

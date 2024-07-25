@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <input id="todo" />
+    <button id="add-button">항목 추가</button>
+    <div id="todo-list"></div>
+  </body>
+  <script>
+    let keyCount = 0;
+    const key = keyCount;
+
+    // 문서 객체를 조회
+    const [h1, input, todoList, addButton] = [
+      'h1',
+      '#todo',
+      '#todo-list',
+      '#add-button',
+    ].map((tag) => document.querySelector(tag));
+
+    const addTodo = () => {
+      // 유효성 체크
+      if (input.value.trim() === '') {
+        h1.textContent = '할 일을 입력해주세요.';
+
+        return;
+      } else {
+        h1.textContent = '할 일 목록';
+      }
+
+      // 문서 객체 설정
+      const [item, checkbox, text, button] = [
+        'div',
+        'input',
+        'span',
+        'button',
+      ].map((tag) => document.createElement(tag));
+
+      text.style.marginLeft = '8px';
+      text.style.marginRight = '8px';
+
+      item.setAttribute('data-key', key); // 데이터 속성 추가
+      item.appendChild(checkbox);
+      item.appendChild(text);
+      item.appendChild(button);
+
+      // 부모 요소에 추가
+      todoList.appendChild(item);
+
+      // checkbox 객체를 조작
+      checkbox.type = 'checkbox';
+      // 핸들러 등록
+      checkbox.addEventListener('change', (event) => {
+        item.style.textDecoration = event.target.checked ? 'line-through' : '';
+      });
+
+      // text 객체 조작
+      text.textContent = input.value;
+
+      // button 객체 조작
+      button.textContent = '제거하기';
+      button.addEventListener('click', () => {
+        removeTodo(key);
+      });
+
+      // 입력 양식 초기화
+      input.value = '';
+
+      // 값 증가
+      keyCount += 1;
+    };
+
+    const removeTodo = (key) => {
+      // 식별 키로 문서 객체를 제거
+      const item = document.querySelector(`[data-key="${key}"]`);
+
+      todoList.removeChild(item);
+    };
+
+    // click 이벤트 연결
+    addButton.addEventListener('click', addTodo);
+
+    input.addEventListener('keyup', (event) => {
+      // 입력 양식에서 Enter 키를 누르면 바로 addTodo() 함수를 호출
+      const ENTER = 13;
+
+      if (event.keyCode === ENTER) {
+        addTodo();
+      }
+    });
+  </script>
+</html>

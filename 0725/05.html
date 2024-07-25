@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let [timer, timerId] = [5, 0];
+      const h1 = document.querySelector('h1');
+      const checkbox = document.querySelector('input');
+
+      // 이벤트 핸들러 등록
+      checkbox.addEventListener('change', (event) => {
+        // 속성이 true이면
+        if (event.currentTarget.checked) {
+          timer = 5; // 타이머 초기화
+          // 체크 상태
+          timerId = setInterval(() => {
+            if (timer < 1) {
+              h1.textContent = `끝`; // 텍스트 반영
+              clearInterval(timerId);
+            } else {
+              h1.textContent = `${timer}초`; // 텍스트 반영
+              timer -= 1; // 상태 반영
+            }
+          }, 1000);
+          // 속성이 false이면
+        } else {
+          // 체크 해제 상태
+          clearInterval(timerId);
+        }
+      });
+    });
+  </script>
+  <body>
+    <input type="checkbox" />
+    <span>타이머 활성화</span>
+    <h1></h1>
+  </body>
+</html>

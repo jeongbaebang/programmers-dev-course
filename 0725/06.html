@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 문서 객체 추출하기
+        const output = document.querySelector('#output');
+        const radios = document.querySelectorAll('[name=pet]'); // name 속성이 pet인 요소 리스트 할당
+
+        // 모든 라디오 버튼에 대해 순회
+        radios.forEach((radio) => {
+          // 각 이벤트 할당
+          radio.addEventListener('change', ({ currentTarget }) => {
+            // checked 속성이 true인 경우
+            if (currentTarget.checked) {
+              output.textContent = `좋아하는 이모티콘은 ${currentTarget.value}이시군요!`;
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3># 좋아하는 이모티콘을 선택해주세요</h3>
+    <label>
+      <input type="radio" name="pet" value="🐶" />
+      <span>🐶</span>
+    </label>
+    <label>
+      <input type="radio" name="pet" value="🐱" />
+      <span>🐱</span>
+    </label>
+    <label>
+      <input type="radio" name="pet" value="🐹" />
+      <span>🐹</span>
+    </label>
+    <label>
+      <input type="radio" name="pet" value="🎸" />
+      <span>🎸</span>
+    </label>
+    <hr />
+    <h3 id="output"></h3>
+  </body>
+</html>
