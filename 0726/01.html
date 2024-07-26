@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 사각형 클래스
+    class Square {
+      #length; // private 속성
+
+      constructor(length) {
+        if (length <= 0) {
+          throw new Error('길이는 0보다 커야 합니다.');
+        }
+
+        this.#length = length;
+      }
+      getPerimeter() {
+        return 4 * this.#length;
+      }
+      getArea() {
+        return this.#length * this.#length;
+      }
+    }
+
+    // 클래스 사용하기
+    const square = new Square(10);
+    console.log(`정사각형의 둘레: ${square.getPerimeter()}`);
+    console.log(`정사각형의 넓이: ${square.getArea()}`);
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    // O(n^2)
+    for (let i = 1; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        const k1 = arr[i];
+        const k2 = arr[j];
+
+        console.log(`${k1} * ${k2} = ${k1 * k2}`);
+      }
+    }
+  </script>
+</html>
