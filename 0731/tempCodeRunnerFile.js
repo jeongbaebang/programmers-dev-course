@@ -1,0 +1,1 @@
+// const ncircle1 = new Circle2(1);
