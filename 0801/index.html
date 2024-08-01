@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="dom.js" defer></script>
+    <style>
+      .active {
+        background-color: pink;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="changeContent()">변경</button>
+    <div>
+      <ul>
+        <li class="fruit apple">A</li>
+        <li class="fruit banana">B</li>
+        <li class="fruit cherry">C</li>
+      </ul>
+      <div class="box" style="width: 100px; height: 100px"></div>
+    </div>
+
+    <button id="my_dev">my_div</button>
+    <button id="clearbtn">clear</button>
+    <div id="result"></div>
+    <div class="message"></div>
+
+    <ul id="fruit">
+      <li id="apple">apple</li>
+      <li id="banana">banana</li>
+      <li id="cherry">cherry</li>
+    </ul>
+    
+    <div class="box"></div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="select.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <form name="testFrom">
+        <fieldset>
+          <ul>
+            <li>
+              <label for="userName">이름</label>
+              <input type="text" id="userName" name="userName" />
+            </li>
+            <li>
+              <label for="class">수업</label>
+              <select name="major" id="major">
+                <option>학과 선택</option>
+                <option value="컴공">컴공</option>
+                <option value="공컴">공컴</option>
+                <option value="사콤">사콤</option>
+                <option value="자콤">자콤</option>
+                <option value="킹콩">킹콩</option>
+              </select>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <label
+            ><input type="radio" name="subject" value="back" />백엔드</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="subject"
+              value="front"
+            />프론트엔드</label
+          >
+          <label
+            ><input type="radio" name="subject" value="full" />풀스택</label
+          >
+        </fieldset>
+
+        <fieldset >
+          <label
+            ><input type="checkbox" name="time" value="morning" />아침</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="time"
+              value="afternoon"
+            />점심</label
+          >
+          <label
+            ><input type="checkbox" name="time" value="evening" />저녁</label
+          >
+        </fieldset>
+        <button id="submitBtn">submit</button>
+      </form>
+      <!-- input[name=""]:checked -->
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
