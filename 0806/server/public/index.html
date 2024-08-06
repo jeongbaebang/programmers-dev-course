@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <button id="greeting">getUsers</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const greeting = document.getElementById('greeting');
+
+        greeting.addEventListener('click', sayHello);
+
+        function sayHello() {
+          fetch('http://localhost:3000/users')
+            .then((res) => res.json())
+            .then((payload) => {
+              const $container = document.createElement('div');
+
+              const $items = payload.map((item) => {
+                const $item = document.createElement('div');
+                const $name = document.createElement('div');
+                const $email = document.createElement('div');
+
+                $name.textContent = item.name;
+                $email.textContent = item.email;
+
+                $item.appendChild($name);
+                $item.appendChild($email);
+
+                return $item;
+              });
+
+              $container.append(...$items);
+
+              console.log($container);
+
+              document.querySelector('body').appendChild($container);
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
