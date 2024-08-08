@@ -1,0 +1,15 @@
+* {
+  background-color: pink;
+}
+
+[data-role='front'] {
+  color: red;
+}
+
+[data-role='back'] {
+  color: aqua;
+}
+
+[data-role='full'] {
+  color: blue;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p><%= 30 + 20 %></p>
+    <p><%= 10 || 30 %></p>
+    <p><%- "<h3>Hello~</h3>" %></p>
+    <div>
+      <% const a = 1000 %>
+      <%= a %>
+    </div>
+    <div><% if(false) {%>
+      <h2>출력!!!!!!</h2>
+    <% } else {%>
+      <h3>노우!!!!</h3>
+    <% } %>
+    </div>
+    <div>
+      <% const arr = [1,2,4,5,6] %>
+      <% arr.forEach((num) => { %>
+          <h4><%= num %></h4>        
+     <% }) %>
+    </div>
+
+    <ul>
+      <% for(let num of arr) {%>
+        <li><%= num %></li>
+        <% }%>
+    </ul>
+
+    <div>
+      <%= people[0].name %>
+    </div>
+
+    <div class="container">
+      <h1>List</h1>
+      <form action="/addTask" method="post">
+        <input type="text" name="newTask" placeholder="할 일 목록 추가해주세요.">
+        <button type="submit">폼 전송</button>
+      </form>
+      <ul>
+        <% tasks.forEach(task => { %>
+        <li>
+          <%= task %>
+          <form action="/deleteTask" method="post">
+          <input type="hidden" name="deleteTask" value="<%= task %>" />
+          <button type="submit">지우기</button>
+          </form>
+        </li>
+      <% }) %>
+      </ul>
+    </div>
+
+    <div><% users2.forEach((item) => { %>
+      <div><% if(item.age >= 18) {%>
+        <h3 data-role="<%= item.role%>">pass</h3>
+          <% } else {%>
+        <h3 data-role="<%= item.role%>">reject</h3>
+      </div><% } %>
+    </div><% }) %>
+  </body>
+</html>
