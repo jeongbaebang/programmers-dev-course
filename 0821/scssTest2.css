@@ -1,0 +1,53 @@
+body {
+  background-color: powderblue;
+}
+
+.container {
+  background-color: pink;
+  padding: 20px;
+}
+
+.container .header {
+  background-color: gold;
+  padding: 10px;
+}
+
+.container .nav {
+  display: flex;
+  background-color: green;
+  gap: 15px;
+  padding: 15px;
+}
+
+.container .nav .nav-item {
+  color: white;
+}
+
+.container .content {
+  background-color: bisque;
+  padding: 20px;
+}
+
+.container .content .card {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.container .content .card .card-title {
+  font-size: 20px;
+  color: blue;
+  margin-bottom: 10px;
+}
+
+.container .content .card .card-description {
+  font-size: 14px;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

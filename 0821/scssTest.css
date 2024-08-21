@@ -1,0 +1,41 @@
+body {
+  background-color: powderblue;
+}
+
+.container .header {
+  background-color: green;
+  padding: 10px;
+}
+.container .nav {
+  display: flex;
+  gap: 15px;
+  background-color: #333;
+  padding: 15px;
+}
+.container .nav-item {
+  color: white;
+}
+.container .content {
+  background-color: bisque;
+  padding: 20px;
+}
+.container .content .card {
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+.container .content .card-title {
+  font-size: 20px;
+  color: blue;
+  margin-bottom: 10px;
+}
+.container .content .card-description {
+  font-size: 14px;
+}
+.container .footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}/*# sourceMappingURL=scssTest.css.map */

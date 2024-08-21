@@ -1,0 +1,88 @@
+:root {
+  --background-color: #f2f2f2;
+  --text-color: #0d0d0d;
+  --purple: #bdb2ff;
+  --purple-dark: #4a4d8f;
+  --blue: #a0c4ff;
+  --blue-dark: #2667a8;
+  --gray-700: #262626;
+  --gray-600: #404040;
+  --gray-500: #b3b3b3;
+  --gray-400: #d9d9d9;
+  --gray-300: #e6e6e6;
+  --gray-200: #ffffff;
+  --gray-100: #ffffff;
+  --danger: #f67280;
+}
+
+$purple: var(--purple);
+$blue: var(--blue);
+$blue-dark: var(--blue-dark);
+$purple: 400;
+
+@mixin box($size: 100px, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+
+.container {
+  h1 {
+    color: $purple;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 10px 0;
+      border: 2px solid pink;
+      background-color: var(--purple);
+
+      .name {
+        color: $blue-dark;
+        font-size: 20px;
+      }
+
+      .age {
+        color: $blue;
+        font-size: 20px;
+      }
+    }
+  }
+  .plus {
+    &-small {
+      font-size: 20px;
+    }
+
+    &-large {
+      font-size: 50px;
+    }
+  }
+  .box {
+    font: {
+      weight: 700;
+      size: 50px;
+    }
+  }
+
+  .boxWrap {
+    width: 30px + 20px;
+    height: 40px - 10px;
+    background-color: $blue-dark;
+    padding: 10px * 2;
+    font-size: (10px / 2);
+  }
+
+  .box2 {
+    @include box(30px, var(--danger));
+  }
+
+  .box3:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    background-color: #a0c4ff;
+  }
+}

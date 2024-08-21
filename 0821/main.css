@@ -1,0 +1,65 @@
+:root {
+  --background-color: #f2f2f2;
+  --text-color: #0d0d0d;
+  --purple: #bdb2ff;
+  --purple-dark: #4a4d8f;
+  --blue: #a0c4ff;
+  --blue-dark: #2667a8;
+  --gray-700: #262626;
+  --gray-600: #404040;
+  --gray-500: #b3b3b3;
+  --gray-400: #d9d9d9;
+  --gray-300: #e6e6e6;
+  --gray-200: #ffffff;
+  --gray-100: #ffffff;
+  --danger: #f67280;
+}
+
+.container h1 {
+  color: 400;
+}
+.container ul {
+  margin: 0;
+  padding: 0;
+}
+.container ul li {
+  list-style: none;
+  padding: 10px 0;
+  border: 2px solid pink;
+  background-color: var(--purple);
+}
+.container ul li .name {
+  color: var(--blue-dark);
+  font-size: 20px;
+}
+.container ul li .age {
+  color: var(--blue);
+  font-size: 20px;
+}
+.container .plus-small {
+  font-size: 20px;
+}
+.container .plus-large {
+  font-size: 50px;
+}
+.container .box {
+  font-weight: 700;
+  font-size: 50px;
+}
+.container .boxWrap {
+  width: 50px;
+  height: 30px;
+  background-color: var(--blue-dark);
+  padding: 20px;
+  font-size: 5px;
+}
+.container .box2 {
+  width: 30px;
+  height: 30px;
+  background-color: var(--danger);
+}
+.container .box3:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background-color: #a0c4ff;
+}/*# sourceMappingURL=main.css.map */
