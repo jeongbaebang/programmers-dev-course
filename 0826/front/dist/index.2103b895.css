@@ -1,0 +1,131 @@
+:root {
+  --background-color: #f2f2f2;
+  --text-color: #0d0d0d;
+  --purple: #bdb2ff;
+  --purple-dark: #4a4d8f;
+  --blue: #a0c4ff;
+  --blue-dark: #2667a8;
+  --gray-700: #262626;
+  --gray-600: #404040;
+  --gray-500: #b3b3b3;
+  --gray-400: #d9d9d9;
+  --gray-300: #e6e6e6;
+  --gray-200: #fff;
+  --gray-100: #fff;
+  --danger: #f67280;
+}
+
+.off {
+  display: none;
+}
+
+#server-status {
+  z-index: 10;
+  margin: 5px;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+}
+
+html, body {
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.container {
+  background-color: var(--gray-200);
+  background-color: var(--purple);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.container main {
+  width: 40%;
+  max-width: 650px;
+}
+
+.container aside {
+  flex-direction: column;
+  width: 40%;
+  max-width: 650px;
+  height: 650px;
+  max-height: 650px;
+  display: flex;
+  overflow: scroll;
+}
+
+.container aside .list .item {
+  color: var(--gray-200);
+  background-color: var(--purple-dark);
+  border-radius: 8px;
+  margin: 10px;
+  padding: 30px;
+}
+
+.container aside .list .item:first-child {
+  border: 3px solid red;
+  animation: 5s ease-in-out forwards removeBorder;
+}
+
+@keyframes removeBorder {
+  0% {
+    border: 3px solid red;
+  }
+
+  50% {
+    border: 1.5px solid #ff000080;
+  }
+
+  100% {
+    border-width: 0;
+    border-color: #0000;
+  }
+}
+
+.container button#send {
+  border: .5px solid var(--purple-dark);
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  height: 56px;
+  margin-top: 56px;
+}
+
+.input__component {
+  background-color: var(--gray-300);
+  height: 54px;
+  padding: 0 16px;
+}
+
+.input__component input {
+  color: var(--text-color);
+  background-color: #0000;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.input__component input::placeholder {
+  color: var(--gray-500);
+}
+
+.input__component[data-type] {
+  border: 2px solid var(--background-color);
+  border-radius: 8px;
+}
+
+.input__component[data-type]:focus-within {
+  border-color: var(--purple-dark);
+}
+/*# sourceMappingURL=index.2103b895.css.map */

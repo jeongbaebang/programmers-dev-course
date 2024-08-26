@@ -1,0 +1,134 @@
+:root {
+  --background-color: #f2f2f2;
+  --text-color: #0d0d0d;
+  --purple: #bdb2ff;
+  --purple-dark: #4a4d8f;
+  --blue: #a0c4ff;
+  --blue-dark: #2667a8;
+  --gray-700: #262626;
+  --gray-600: #404040;
+  --gray-500: #b3b3b3;
+  --gray-400: #d9d9d9;
+  --gray-300: #e6e6e6;
+  --gray-200: #ffffff;
+  --gray-100: #ffffff;
+  --danger: #f67280;
+}
+
+.off {
+  display: none;
+}
+
+#server-status {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  font-size: 2rem;
+  margin: 5px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-200);
+  position: relative;
+  background-color: var(--purple);
+  gap: 50px;
+
+  main {
+    width: 40%;
+    max-width: 650px;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    max-width: 650px;
+    height: 650px;
+    max-height: 650px;
+    overflow: scroll;
+
+    .list {
+      .item {
+        margin: 10px;
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        color: var(--gray-200);
+        background-color: var(--purple-dark);
+
+        &:first-child {
+          border: 3px solid red;
+          animation: removeBorder 5s ease-in-out forwards;
+        }
+
+        @keyframes removeBorder {
+          0% {
+            border: 3px solid red;
+          }
+          50% {
+            border: 1.5px solid rgba(255, 0, 0, 0.5);
+          }
+          100% {
+            border-width: 0;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  button#send {
+    margin-top: 56px;
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border: 0.5px solid var(--purple-dark);
+    cursor: pointer;
+  }
+}
+
+.input__component {
+  & {
+    padding: 0 16px;
+    height: 54px;
+    background-color: var(--gray-300);
+  }
+
+  & input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+
+    &::placeholder {
+      color: var(--gray-500);
+    }
+  }
+
+  &[data-type] {
+    border-radius: 8px;
+    border: 2px solid var(--background-color);
+
+    &:focus-within {
+      border-color: var(--purple-dark);
+    }
+  }
+}

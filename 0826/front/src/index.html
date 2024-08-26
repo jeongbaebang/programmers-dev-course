@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.scss" />
+    <script type="module" src="main.ts"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="server-status">서버 연결중...</h2>
+    <div class="container">
+      <main>
+        <form id="form">
+          <h1>Form</h1>
+          <section>
+            <h3>Name</h3>
+            <div class="input__component" data-type="name">
+              <input type="text" placeholder="이름을 입력하세요" />
+            </div>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <div class="input__component" data-type="email">
+              <input type="text" placeholder="이메일를 입력하세요" />
+            </div>
+          </section>
+          <section>
+            <h3>Address</h3>
+            <div class="input__component" data-type="address">
+              <input type="text" placeholder="주소를 입력하세요" />
+            </div>
+          </section>
+          <section>
+            <h3>Description</h3>
+            <div class="input__component" data-type="description">
+              <input type="text" placeholder="설명을 입력하세요" />
+            </div>
+          </section>
+          <section>
+            <button id="send">SEND</button>
+          </section>
+        </form>
+      </main>
+      <aside>
+        <h1>회원 List</h1>
+        <section class="list"></section>
+      </aside>
+    </div>
+  </body>
+</html>
