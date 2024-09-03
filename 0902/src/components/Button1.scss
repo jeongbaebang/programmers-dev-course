@@ -1,0 +1,15 @@
+$main-font: 'helvetica';
+
+@mixin title($font) {
+  font-size: 60px;
+  font-family: $font;
+  color: red;
+}
+
+.header {
+  @include title($main-font);
+}
+
+div {
+  margin: calc(50px / 2);
+}
