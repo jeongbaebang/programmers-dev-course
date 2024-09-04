@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.formInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formInput {
+  height: 50px;
+
+  input {
+    margin-left: 10px;
+    height: 100%;
+    border: none;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 4px;
+  }
+}
+
+.formButtonContainer {
+  margin: 10px 0;
+  text-align: center;
+}
